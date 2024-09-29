@@ -1031,3 +1031,6 @@ h6:empty {
   display: none;
 }
 
+#prvw__bundle_container {
+padding-bottom: 16px;
+}
