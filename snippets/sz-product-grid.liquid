@@ -1,0 +1,40 @@
+<section class="collection">
+  {%- if collection.products.size > 0 -%}
+    <ul
+      id="product-grid"
+      data-id="{{ section.id }}"
+      class="grid appearance-none"
+      style="
+        --grid-cols: {{ section.settings.columns_desktop }};
+        --grid-cols-mobile: {{ section.settings.columns_mobile }};
+      "
+    >
+      {%- for product in collection.products -%}
+        {% assign lazy_load = false %}
+        {%- if forloop.index > 2 -%}
+          {%- assign lazy_load = true -%}
+        {%- endif -%}
+        <li
+          {% if settings.animations_reveal_on_scroll %}
+            data-cascade
+            style="--animation-order: {{ forloop.index }};"
+          {% endif %}
+        >
+          {% render 'card-product',
+            card_product: product,
+            media_aspect_ratio: section.settings.image_ratio,
+            image_shape: section.settings.image_shape,
+            show_secondary_image: section.settings.show_secondary_image,
+            show_vendor: section.settings.show_vendor,
+            show_rating: section.settings.show_rating,
+            lazy_load: lazy_load,
+            quick_add: section.settings.quick_add,
+            section_id: section.id
+          %}
+        </li>
+      {%- endfor -%}
+    </ul>
+  {%- else -%}
+    <p>No products found in this collection.</p>
+  {%- endif -%}
+</section>

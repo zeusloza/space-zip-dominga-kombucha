@@ -1,0 +1,8 @@
+<a href="{{ sz-link.settings.href }}" {{ sz-link.shopify_attributes }}>
+  {%- if sz-link.settings.text != blank -%}
+    <span>{{ sz-link.settings.text }}</span>
+  {%- endif -%}
+  {%- if sz-link.settings.img != blank -%}
+    {{ sz-link.settings.img | image_url: width: 2048 | image_tag }}
+  {%- endif -%}
+</a>
