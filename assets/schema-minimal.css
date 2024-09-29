@@ -1023,3 +1023,11 @@ h6:empty {
     transform: translateY(0);
   }
 }
+.block__bottomtitle {
+  display: none;
+}
+
+#prvw__bottom_title > div {
+  display: none;
+}
+
