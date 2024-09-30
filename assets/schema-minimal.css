@@ -219,7 +219,7 @@ sz-header {
   width: var(--width);
   height: var(--height);
   padding: var(--padding);
-  z-index: 99;
+  z-index: 1;
   &.horizontal {
     display: flex;
     justify-content: space-between;
