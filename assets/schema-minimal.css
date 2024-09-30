@@ -361,6 +361,7 @@ sz-popover,
 media-gallery,
 .product__info-container {
   --media-gallery-width: 40dvw;
+  padding-bottom: 32px;
 }
 
 media-gallery {
