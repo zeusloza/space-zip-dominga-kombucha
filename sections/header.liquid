@@ -19,6 +19,17 @@
       {% render 'sz-link' with block %}
   {%- endcase -%}
 {%- endfor -%}
+{% if template == 'cart' %}
+  {% if cart.item_count > 0 %}
+    <a
+      href="/cart/clear"
+      class="button remove-pack"
+      aria-label="remover paquete"
+    >
+      Remover paquete
+    </a>
+  {% endif %}
+{% endif %}
 {% if section.settings.sticky_header_type != 'none' %} </sz-header> {% endif %}
 
 <script type="application/ld+json">
