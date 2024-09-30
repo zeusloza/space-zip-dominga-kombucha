@@ -11,7 +11,9 @@
   --color-warning: rgb(255, 196, 0);
   --color-danger: rgb(255, 0, 0);
   --base-padding: 4dvw;
-  --font-size-base: calc(clamp(0.9rem, 0.2vi + 0.9rem, 1.1rem) * var(--font-body-scale));
+  --font-size-base: calc(
+    clamp(0.9rem, 0.2vi + 0.9rem, 1.1rem) * var(--font-body-scale)
+  );
   --media-sm: 640px;
   --media-md: 768px;
   --media-lg: 1024px;
@@ -19,9 +21,11 @@
   --border-radius-full: 9999px;
   --border-radius-sm: 6px;
   --border-radius-md: 12px;
-  --box-shadow: 0rem -0.0625rem 0rem 0rem #b5b5b5 inset, 0rem 0rem 0rem 0.0625rem rgba(0, 0, 0, 0.1) inset,
+  --box-shadow: 0rem -0.0625rem 0rem 0rem #b5b5b5 inset,
+    0rem 0rem 0rem 0.0625rem rgba(0, 0, 0, 0.1) inset,
     0rem 0.03125rem 0rem 0.09375rem #fff inset;
-  --box-shadow2: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  --box-shadow2: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 @keyframes push {
   50% {
@@ -53,7 +57,7 @@ body {
   font-weight: var(--font-body-weight);
 }
 @property --color-gradient {
-  syntax: '<color>';
+  syntax: "<color>";
   initial-value: rgb(227, 227, 227);
   inherits: false;
 }
@@ -91,7 +95,7 @@ small,
 }
 a,
 .a,
-[role='link'] {
+[role="link"] {
   cursor: pointer;
 }
 button,
@@ -113,10 +117,12 @@ button,
   border: none;
   border-radius: clamp(0.5rem, 0.75rem, 1.25rem);
   cursor: pointer;
-  box-shadow: 0rem -0.0625rem 0rem 0rem #b5b5b5 inset, 0rem 0rem 0rem 0.0625rem rgba(0, 0, 0, 0.1) inset,
+  box-shadow: 0rem -0.0625rem 0rem 0rem #b5b5b5 inset,
+    0rem 0rem 0rem 0.0625rem rgba(0, 0, 0, 0.1) inset,
     0rem 0.03125rem 0rem 0.09375rem #fff inset;
   &:active {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 3px 6px -2px inset, rgba(0, 0, 0, 0.3) 0px 8px 3px -8px inset;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 3px 6px -2px inset,
+      rgba(0, 0, 0, 0.3) 0px 8px 3px -8px inset;
   }
 }
 .shopify-payment-button__button,
@@ -167,14 +173,14 @@ details {
         display: none;
       }
       &::before {
-        content: '';
+        content: "";
       }
     }
   }
 }
 input {
-  &[type='text'],
-  &[type='number'] {
+  &[type="text"],
+  &[type="number"] {
     height: 37px;
     border: none;
     border-radius: 8px;
@@ -279,7 +285,7 @@ sz-select,
 sz-option,
 .sz-option {
   display: block;
-  --iconChecked: '✅';
+  --iconChecked: "✅";
   & input {
     &:checked + .iconChecked::after {
       content: var(--iconChecked);
@@ -301,7 +307,7 @@ sz-option,
 }
 sz-dropdown,
 .sz-dropdown {
-  --sz-dropdown-marker: '';
+  --sz-dropdown-marker: "";
   & button {
     &::after {
       content: var(--sz-dropdown-marker);
@@ -564,7 +570,7 @@ quantity-input {
     position: relative;
     line-height: 37px;
     &::after {
-      content: '🚚';
+      content: "🚚";
       opacity: 0;
       position: absolute;
       transition-property: opacity, transform;
@@ -972,15 +978,11 @@ h6:empty {
   display: none;
 }
 
-.cart-cart {
-  padding-bottom: 10%;
-}
-
 .flamingo-wrapper {
   --aspect-ratio: 1;
   animation: float 3s ease-in-out infinite;
   position: fixed;
-  bottom: 15%;
+  bottom: 22%;
   right: 10dvw;
   z-index: 9;
   & .flamingo {
@@ -1013,7 +1015,9 @@ h6:empty {
     }
   }
 }
-
+.cart-cart {
+  padding-bottom: 140px;
+}
 @keyframes float {
   0% {
     transform: translateY(0);
@@ -1034,5 +1038,9 @@ h6:empty {
 }
 
 #prvw__bundle_container {
-padding-bottom: 16px;
+  padding-bottom: 16px;
+}
+.quantity-counter {
+  font-size: calc(var(--font-size-base) * 1.2);
+  font-weight: bold;
 }
